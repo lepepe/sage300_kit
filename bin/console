@@ -11,5 +11,7 @@ require "sage300_kit"
 # require "pry"
 # Pry.start
 
+client = Sage300Kit::Client.new(auth: ENV['BASIC_AUTH'])
+
 require "irb"
 IRB.start(__FILE__)
