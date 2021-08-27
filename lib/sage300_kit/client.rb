@@ -17,6 +17,7 @@ module Sage300Kit
 
     # Order Entry Moduel OE
     include Sage300Kit::Client::OE::Orders
+    include Sage300Kit::Client::OE::Invoices
     include Sage300Kit::Client::OE::Notes
     include Sage300Kit::Client::OE::SalesHistory
     # Purchase Order Entry Moduel PO
