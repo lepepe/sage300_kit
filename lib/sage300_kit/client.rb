@@ -20,7 +20,7 @@ module Sage300Kit
     include Sage300Kit::Client::OE::Notes
     include Sage300Kit::Client::OE::SalesHistory
     # Purchase Order Entry Moduel PO
-    include Sage300Kit::Client::OE::PurchaseOrders
+    include Sage300Kit::Client::PO::PurchaseOrders
 
     DEFAULT_TIMEOUT = 120
 
@@ -32,7 +32,10 @@ module Sage300Kit
       @timeout = options[:timeout] || DEFAULT_TIMEOUT
 
       self.class.default_options.merge!(
-        headers: { 'Authorization' => @auth },
+        headers: {
+          'Authorization' => @auth,
+          'Content-Type' => 'application/json'
+        },
         timeout: @timeout
       )
     end
