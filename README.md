@@ -1,6 +1,8 @@
 # Sage300Kit
 
-Sage300Kit is a ruby gem client library to talk with Sage300 API.
+Sage300Kit is a ruby gem client library to talk with Sage300 API.   
+
+The Sage 300 Web API makes it easier to create services that integrate with Sage 300 data and business logic. The Web API improves on existing tools for third-party integrations without requiring in-depth understanding of the Sage 300 View protocol and components.
 
 ## Installation
 
@@ -31,14 +33,46 @@ client.get_orders('COMPANY', '$top':10)
 
 ## Resources
 
-### OE Module
+### Order Entry Module
 
-#### OROrders
+#### OEOrders
 
 ``` ruby
 client.get_orders('COMPANY')
 client.get_order('COMPANY', <ORDER_ID>)
 client.create_order('COMPNAY', {})
+```
+
+#### OEInvoices
+
+``` ruby
+client.get_invoices('COMPANY')
+client.get_invoice('COMPANY', <ORDER_ID>)
+```
+#### OECreditDebitNotes
+
+``` ruby
+client.get_notes('COMPANY')
+client.get_note('COMPANY', <ORDER_ID>)
+client.create_notes('COMPNAY', {})
+```
+
+#### OESalesHistory
+
+``` ruby
+client.sales_history('COMPANY')
+client.sales_history_details('COMPANY')
+client.sales_statistics('COMPNAY', {})
+```
+
+### Purchase Order Entry Module
+
+#### POPurchaseOrders
+
+``` ruby
+client.get_pos('COMPANY')
+client.get_po('COMPANY', <ORDER_ID>)
+client.create_po('COMPNAY', {})
 ```
 
 ## License
